@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Palya {
     private Hajo hajo;
-    private static int[] tippek = new int[7];
+    private static boolean[] tippek = {false, false, false};
 
     public Palya(Hajo hajo) {
         this.hajo = hajo;
@@ -18,15 +18,29 @@ public class Palya {
             i++;
         }
         van = i < Hajo.getPos().length;
-        eredmeny = van ? "Talált" : "Nem talált";
-        boolean osszesVan = false;
-        for (int j = 0; j < Hajo.getPos().length; j++) {
-            int k = 0;
-            while(k < tippek.length && !(Hajo.getPos()[j] == tippek[k])) {
-                k++;
-            }
+        if(van) {
+            i = 0;
+            while(i < tippek.length && !(tippek[i] == false))
+                i++;
+            tippek[i] = true;
         }
-        // osszesVan
+        while(i < tippek.length && tippek[i] == false)
+                i++;
+        if(i == tippek.length)
+            eredmeny = "Süllyedt";
+        else
+            eredmeny = van ? "Talált" : "Nem talált";
+        
+        
+//        boolean osszesVan = false;
+//        for (int j = 0; j < Hajo.getPos().length; j++) {
+//            int k = 0;
+//            while(k < tippek.length && !(Hajo.getPos()[j] == tippek[k])) {
+//                k++;
+//            }
+//            osszesVan = k < tippek.length;
+//        }
+//        // osszesVan
         return eredmeny;
     }
     
@@ -46,7 +60,7 @@ public class Palya {
         System.out.println(loves(tipp));
         int db = 0;
         while(loves(tipp) != "Süllyedt"){
-            tippek[db] = tipp;
+//            tippek[db] = tipp;
             bekeres();
             db++;
         }
