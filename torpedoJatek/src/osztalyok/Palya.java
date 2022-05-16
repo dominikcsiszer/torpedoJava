@@ -19,6 +19,14 @@ public class Palya {
         }
         van = i < Hajo.getPos().length;
         eredmeny = van ? "Talált" : "Nem talált";
+        boolean osszesVan = false;
+        for (int j = 0; j < Hajo.getPos().length; j++) {
+            int k = 0;
+            while(k < tippek.length && !(Hajo.getPos()[j] == tippek[k])) {
+                k++;
+            }
+        }
+        // osszesVan
         return eredmeny;
     }
     
