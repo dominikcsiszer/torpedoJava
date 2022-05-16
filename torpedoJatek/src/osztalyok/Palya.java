@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Palya {
     private Hajo hajo;
+    private static int[] tippek;
 
     public Palya(Hajo hajo) {
         this.hajo = hajo;
@@ -31,9 +32,11 @@ public class Palya {
             tipp = sc.nextInt();
         }
         System.out.println(loves(tipp));
+        int db = 0;
         while(loves(tipp) != "Süllyedt"){
             bekeres();
+            db++;
         }
-        System.out.println(loves(tipp));
+        System.out.println("Ennyiszer tippeltél: " + db);
     }
 }
