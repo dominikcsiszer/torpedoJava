@@ -10,11 +10,19 @@ public class Palya {
     }
     
     public static String loves(int poz){
-        
-        return "";
+        String eredmeny = "";
+        int i = 0;
+        boolean van = false;
+        while(i < Hajo.getPos().length && !(poz == Hajo.getPos()[i])) {
+            i++;
+        }
+        van = i < Hajo.getPos().length;
+        eredmeny = van ? "Talált" : "Nem talált";
+        return eredmeny;
     }
     
     public static void bekeres(){
+        System.out.println(Hajo.getPos()[1]);
         Scanner sc = new Scanner(System.in);
         System.out.print("Add meg a célpont helyét!");
         int tipp = sc.nextInt();
@@ -22,6 +30,10 @@ public class Palya {
             System.out.print("Add meg a célpont helyét!");
             tipp = sc.nextInt();
         }
-        loves(tipp);
+        System.out.println(loves(tipp));
+        while(loves(tipp) != "Süllyedt"){
+            bekeres();
+        }
+        System.out.println(loves(tipp));
     }
 }
