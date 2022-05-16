@@ -5,8 +5,7 @@ import osztalyok.Palya;
 
 public class torpedoProgram {
     public static void main(String[] args) {
-        int[] hajoPoz = new int[3];
-        Hajo h = new Hajo(hajoPoz);
+        Hajo h = new Hajo();
         
         Palya p = new Palya(h);
         p.bekeres();
