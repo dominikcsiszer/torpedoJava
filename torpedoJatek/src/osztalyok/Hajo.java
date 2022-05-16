@@ -7,7 +7,7 @@ public class Hajo {
         this.hajoPoz = hajoPoz;
     }
     
-    public static String talalat(int poz) {
+    public static String talalat() {
         
         return "Talált";
     }

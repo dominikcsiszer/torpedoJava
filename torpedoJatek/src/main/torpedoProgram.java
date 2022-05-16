@@ -8,7 +8,7 @@ public class torpedoProgram {
         int[] hajoPoz = new int[3];
         Hajo h = new Hajo(hajoPoz);
         
-        System.out.println(h.talalat(3));
+        System.out.println(h.talalat());
     }
     
 }
