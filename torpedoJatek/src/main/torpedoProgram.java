@@ -7,8 +7,10 @@ public class torpedoProgram {
     public static void main(String[] args) {
         int[] hajoPoz = new int[3];
         Hajo h = new Hajo(hajoPoz);
+        h.getPos();
         
-        System.out.println(h.talalat());
+        Palya p = new Palya(h);
+        p.bekeres();
     }
     
 }
