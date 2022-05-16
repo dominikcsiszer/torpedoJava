@@ -9,6 +9,9 @@ public class torpedoProgram {
         Hajo h = new Hajo(hajoPoz);
         
         System.out.println(h.talalat(3));
+        
+        Palya p = new Palya(h);
+        p.bekeres();
     }
     
 }
